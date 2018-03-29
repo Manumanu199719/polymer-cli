@@ -1,7 +1,14 @@
 # Changelog
 
+## Unreleased
+* ES > AMD module transformation
+  * Now available from the `build` command. Set the `js.transformEsModulesToAmd` build config option, or use the `--js-transform-es-modules-to-amd` command-line flag.
+  * AMD loader will now be injected as a minified inline script, instead of as an external script.
+  * AMD modules will now execute in document script order.
+* Babel helpers will now be injected as a single minified inline script into the HTML document, instead of into every JS script.
+* Phantom `<html>`, `<body>`, and `<head>` elements will no longer be introduced into HTML.
 <!-- Add new, unreleased items here. -->
-<!-- ## Unreleased -->
+
 ## v1.7.0-pre.3 [03-22-2018]
 - Fix -—module-resolution default from polyserve overriding polymer.json
 

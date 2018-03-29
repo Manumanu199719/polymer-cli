@@ -46,6 +46,7 @@ export async function build(
       moduleResolution: polymerProject.config.moduleResolution,
     },
     html: options.html,
+    entrypointPath: polymerProject.config.entrypoint,
   };
 
   // If no name is provided, write directly to the build/ directory.
@@ -68,8 +69,8 @@ export async function build(
 
   const compiledToES5 = !!(optimizeOptions.js && optimizeOptions.js.compile);
   if (compiledToES5) {
-    buildStream = buildStream.pipe(polymerProject.addBabelHelpersInEntrypoint())
-                      .pipe(polymerProject.addCustomElementsEs5Adapter());
+    buildStream =
+        buildStream.pipe(polymerProject.addCustomElementsEs5Adapter());
   }
 
   const bundled = !!(options.bundle);

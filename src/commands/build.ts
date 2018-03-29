@@ -62,6 +62,11 @@ export class BuildCommand implements Command {
       description: 'Minify inlined and external JavaScript.'
     },
     {
+      name: 'js-transform-es-modules-to-amd',
+      type: Boolean,
+      description: 'Transform ES modules to AMD modules.'
+    },
+    {
       name: 'css-minify',
       type: Boolean,
       description: 'Minify inlined and external CSS.'
